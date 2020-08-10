@@ -5,11 +5,16 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
+    [Header("Player")]
     [SerializeField] float moveSpeed;
     [SerializeField] float padding = 0.2f;
+    [SerializeField] float health = 1000;
+
+    [Header("Projectile")]
     [SerializeField] GameObject laserPrefab;
     [SerializeField] float projectileSpeed = 20f;
     [SerializeField] float projectileFiringPeriod = 0.05f;
+    
 
     Coroutine firingCoroutine;
 
@@ -43,10 +48,6 @@ public class Player : MonoBehaviour
         Fire();
     }
 
-
-
-    
-
     private void Move()
     {
         var deltaX = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
@@ -72,6 +73,20 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
+        ProcessHit(damageDealer);
+    }
+
+    private void ProcessHit(DamageDealer damageDealer)
+    {
+        health -= damageDealer.GetDamage();
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 
 
     IEnumerator FireContinuosly()

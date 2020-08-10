@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8869733879194121958
+--- !u!1 &6285018509749693647
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8869733879194121956}
-  - component: {fileID: 8869733879194121957}
-  - component: {fileID: 8869733879194121955}
-  - component: {fileID: 4427547444481831127}
-  m_Layer: 8
-  m_Name: Player
+  - component: {fileID: 4166142411685690176}
+  - component: {fileID: 6154068116918136559}
+  - component: {fileID: -420401692762367545}
+  - component: {fileID: -5983399342567468396}
+  - component: {fileID: -3457441588960062204}
+  m_Layer: 9
+  m_Name: Enemy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8869733879194121956
+--- !u!4 &4166142411685690176
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8869733879194121958}
+  m_GameObject: {fileID: 6285018509749693647}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8869733879194121957
+--- !u!212 &6154068116918136559
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8869733879194121958}
+  m_GameObject: {fileID: 6285018509749693647}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,43 +74,55 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 511f7674531fc430e86fc50087fd12c0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a022f87aad8524083a7bbebff2c3dd37, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 10.8, y: 26.908028}
+  m_Size: {x: 0.93, y: 0.84}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8869733879194121955
+--- !u!114 &-420401692762367545
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8869733879194121958}
+  m_GameObject: {fileID: 6285018509749693647}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7f7f0a7705cc421794f620ad4bf0e80, type: 3}
+  m_Script: {fileID: 11500000, guid: 04de22c644edc4699bb15c3764a997ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  padding: 0.5
-  health: 1000
-  laserPrefab: {fileID: 6818477582673308813, guid: 65214932a23cb45b88737e173d6b4ce4,
-    type: 3}
-  projectileSpeed: 20
-  projectileFiringPeriod: 0.05
---- !u!60 &4427547444481831127
-PolygonCollider2D:
+--- !u!114 &-5983399342567468396
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8869733879194121958}
+  m_GameObject: {fileID: 6285018509749693647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99f72f375924d114f8bcc28609f97717, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  shotCounter: 0
+  minTimeBtwShots: 0.2
+  maxTimeBtwShots: 3
+  enemyLaser: {fileID: 3365788107271072851, guid: 326e6159af3381d47b1512b00990565b,
+    type: 3}
+  projectileSpeed: 10
+--- !u!58 &-3457441588960062204
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6285018509749693647}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -117,31 +130,5 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.99, y: 0.75}
-    newSize: {x: 10.8, y: 26.908028}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.48905775, y: 0.065577984}
-      - {x: 0.34630626, y: -0.025728486}
-      - {x: 0.11311555, y: 0.11021362}
-      - {x: 0.06963574, y: 0.375}
-      - {x: -0.081231095, y: 0.36905766}
-      - {x: -0.12717353, y: 0.119057655}
-      - {x: -0.36007532, y: -0.024133027}
-      - {x: -0.49499997, y: 0.095}
-      - {x: -0.46528885, y: -0.25094235}
-      - {x: -0.41905776, y: -0.21963564}
-      - {x: -0.13311554, y: -0.27123109}
-      - {x: -0.095, y: -0.375}
-      - {x: 0.08123109, y: -0.375}
-      - {x: 0.13615572, y: -0.27905765}
-      - {x: 0.398955, y: -0.22237015}
-      - {x: 0.45499998, y: -0.265}
-      - {x: 0.47123107, y: -0.2431153}
+  serializedVersion: 2
+  m_Radius: 0.4

@@ -7,6 +7,7 @@ public class EnemyPathing : MonoBehaviour
 {
     WaveConfig waveConfig;
     List<Transform> waypoints;
+    
     int waypointIndex = 0;
 
 
@@ -35,7 +36,7 @@ public class EnemyPathing : MonoBehaviour
             var targetPosition = waypoints[waypointIndex].transform.position;
             var movementThisFrame = waveConfig.GetMoveSpeed() * Time.deltaTime;
 
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, movementThisFrame);
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementThisFrame);
 
             if (transform.position == targetPosition)
             {
