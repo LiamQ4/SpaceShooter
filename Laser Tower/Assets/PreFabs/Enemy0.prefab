@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: -3074567513452581010}
   - component: {fileID: 5232202678544495012}
   - component: {fileID: 3855591961154075839}
+  - component: {fileID: 3402429031904307965}
+  - component: {fileID: 5847049045867380492}
   m_Layer: 9
   m_Name: Enemy0
   m_TagString: Untagged
@@ -109,13 +111,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99f72f375924d114f8bcc28609f97717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 1613
   shotCounter: 0
   minTimeBtwShots: 0.2
   maxTimeBtwShots: 3
+  enemyScore: 50
   enemyLaser: {fileID: 3365788107271072851, guid: 326e6159af3381d47b1512b00990565b,
     type: 3}
   projectileSpeed: 10
+  deathVFX: {fileID: 8429063102809061730, guid: 0c3f550d18fa40144b0c85f4f3be513d,
+    type: 3}
+  deathSound: {fileID: 8300000, guid: e7f31c09b22e94e5db44fb44e020827e, type: 3}
+  laserSound: {fileID: 8300000, guid: 5ef8c081b304a4f9bac076adfa4420b5, type: 3}
+  volume: 10
 --- !u!58 &3855591961154075839
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -126,9 +134,43 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.4
+--- !u!50 &3402429031904307965
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2394123525049094366}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &5847049045867380492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2394123525049094366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761fa57315da1714299cc1f925e8fe08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20

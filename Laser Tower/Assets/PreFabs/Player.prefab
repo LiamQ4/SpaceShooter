@@ -98,11 +98,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   padding: 0.5
-  health: 1000
+  health: 100
+  deathSound: {fileID: 8300000, guid: e7f31c09b22e94e5db44fb44e020827e, type: 3}
   laserPrefab: {fileID: 6818477582673308813, guid: 65214932a23cb45b88737e173d6b4ce4,
     type: 3}
   projectileSpeed: 20
   projectileFiringPeriod: 0.05
+  laserSound: {fileID: 8300000, guid: 5ef8c081b304a4f9bac076adfa4420b5, type: 3}
+  volume: 15
 --- !u!60 &4427547444481831127
 PolygonCollider2D:
   m_ObjectHideFlags: 0
